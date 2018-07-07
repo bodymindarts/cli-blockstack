@@ -22,6 +22,8 @@ import {
   STRENGTH,
 } from './keys';
 
+import { gaiaPutFileMultiSig } from './multisig';
+
 const Promise = require('bluebird');
 Promise.onPossiblyUnhandledRejection(function(error){
     throw error;

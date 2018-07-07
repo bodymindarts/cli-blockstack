@@ -203,6 +203,39 @@ const CLI_ARGS = {
       help: 'Get a file from another user\'s Gaia hub.  Prints the file data to stdout.',
       group: 'Gaia',
     },
+    gaia_putfile_multisig: {
+      type: "array",
+      items: [
+        {
+          name: 'gaia_hub',
+          type: 'string',
+          realtype: 'url',
+          pattern: URL_PATTERN,
+        },
+        {
+          name: 'app_private_key',
+          type: 'string',
+          realtype: 'private_key',
+          pattern: PRIVATE_KEY_MULTISIG_PATTERN,
+        },
+        {
+          name: 'dataPath',
+          type: 'string',
+          realtype: 'path',
+          pattern: '.+',
+        },
+        {
+          name: 'gaiaPath',
+          type: 'string',
+          realtype: 'path',
+          pattern: PATH_PATTERN,
+        },
+      ],
+      minItems: 4,
+      maxItems: 4,
+      help: 'Put a file into a given Gaia hub, authenticating with the given app private key.  ',
+      group: 'Gaia',
+    },
     gaia_putfile: {
       type: "array",
       items: [
